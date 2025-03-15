@@ -1,27 +1,33 @@
 import React from "react"
+
 import './App.css';
-import Home from "./Home";
-import Logo from "../src/Assets/logo.jpeg"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./Component/Navbar";
+import Home from "../src/Pages/Home";
+import BookingPage from "./Pages/BookingPage";
+import ConfirmedBooking from "./Component/ConfirmedBooking "
+import Footer from "../src/Component/Footer"
 function App() {
   return (
     <>
+    
       <header >
-        <nav>
-          <img src={Logo} alt="logo"/>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Menu</a></li>
-            <li><a href="#">Testimonials</a></li>
-            <li><a href="#">Order Online</a></li>
-            <li><a href="#">Login</a></li>
-          </ul>
-        </nav>
+       <nav>
+          <Navbar/>
+       </nav>
        
       </header>
-      <footer>
-        <h6>All right reseve for Little Lemon Restaurant</h6>
-      </footer>
+      <BrowserRouter>
+        <Routes>
+           <Route path="/" element={<Home/>}></Route>
+           <Route path="/booking" element={<BookingPage/>}></Route>
+           <Route path="/confirmed" element={<ConfirmedBooking />} />
+        </Routes>
+      </BrowserRouter>
+   
+     <footer>
+          <Footer/>
+     </footer>
     </>
   );
 }

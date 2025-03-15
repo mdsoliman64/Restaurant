@@ -1,0 +1,23 @@
+footer,header{
+    overflow: hidden;
+}
+footer img{
+    max-height: 150px;
+   
+}
+
+footer ul{
+    display: flex;
+    flex-direction: column;
+    
+    
+
+}
+footer h2{
+  
+    color: #fff;
+  
+}
+footer ul a{
+    color:#fff;
+}
